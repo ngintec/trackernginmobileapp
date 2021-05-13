@@ -11,9 +11,11 @@
 - Trackee Mobile App helps to run the locator as a service in back ground.
 - And does the Following for Trackee
 	1. Register 
+	
 		![screen](https://locatorservices.ngintec.com/ss/register_m.jpeg)
 
 	2. Login
+	
 		![screen](https://locatorservices.ngintec.com/ss/login_m.jpeg)
 
 		- Tracking on : Gather and Send Coordinates (at Update frequency)
