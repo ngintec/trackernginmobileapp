@@ -17,9 +17,8 @@
 	2. Login
 		- ![screen](https://locatorservices.ngintec.com/ss/login_m.jpeg)
 
-		a. Tracking on 
-			A. gather coordinate
-			B. Send Coordinates (at Update frequency)
+		- Tracking on : Gather and Send Coordinates (at Update frequency)
+			
 			
 		- ![screen](https://locatorservices.ngintec.com/ss/UI.jpeg)
 	3. Settings
