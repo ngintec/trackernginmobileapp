@@ -43,7 +43,7 @@ export default function RemoveTracker({navigation}) {
       .then(data => {
         setJson(data);
       })
-      .catch(error => console.error(error))
+      .catch(error => __DEV__ && console.error(error))
       .finally(() => setLoading(false));
   };
 

@@ -112,6 +112,9 @@ const Home = ({navigation, route}) => {
           fetch(apiEndPoint3 + 'location', {
             method: 'POST',
             headers: {
+              'Cache-Control': 'no-cache, no-store, must-revalidate',
+              'Pragma': 'no-cache',
+              'Expires': 0,
               Accept: 'application/json',
               'Content-Type': 'application/json',
               id: id,
@@ -123,13 +126,11 @@ const Home = ({navigation, route}) => {
           })
             .then(response => response.json())
             .then(data => {
-              console.warn(data.message + ' Message from send location ');
+              __DEV__ &&
+                console.warn(data.message + ' Message from send location ');
             })
             .catch(error => __DEV__ && console.error(error))
             .finally(() => setLoading(false));
-
-          setCurrentLongitude(currentLongitude);
-          setCurrentLatitude(currentLatitude);
         },
         error => {
           setLocationStatus(error.message);
@@ -138,7 +139,7 @@ const Home = ({navigation, route}) => {
           enableHighAccuracy: true,
           timeout: 20000,
           maximumAge: 10000,
-          distanceFilter: 1,
+          distanceFilter: 50,
         },
       );
     }, 5000);
@@ -178,11 +179,9 @@ const Home = ({navigation, route}) => {
         setLocationStatus(error.message);
       },
       {
-        timeout: 30000,
         enableHighAccuracy: false,
-        timeout: 20000,
-        maximumAge: 10000,
-        distanceFilter: 1,
+        timeout: 30000,
+        maximumAge: 1000
       },
     );
   };

@@ -8,6 +8,7 @@ import {
   Text,
   ToastAndroid,
   Keyboard,
+  Linking,
 } from 'react-native';
 
 import {colors, globalHeight, globalWidth} from '../../constants/Dimension';
@@ -61,10 +62,17 @@ const Login = ({navigation}) => {
         data.token && AsyncStorage.setItem('LoginToken', data.token);
         data.token && AsyncStorage.setItem('ID', data.id);
         data.token && AsyncStorage.setItem('Frequency', frequency.toString());
-        data.token && showToastWithGravityAndOffset('Login Successful');
-        data.token && navigation.navigate('Home');
+        if (data.isTracker === 'True') {
+          showToastWithGravityAndOffset('Redirecting you to browser');
+          Linking.openURL(
+            `https://locatorservices.ngintec.com/tracker?id=${data.id}&email=${data.email}`,
+          );
+        } else {
+          data.token && showToastWithGravityAndOffset('Login Successful');
+          data.token && navigation.navigate('Home');
+        }
       })
-      .catch(error => console.error(error))
+      .catch(error => __DEV__ && console.log(error))
       .finally(() => setLoading(false));
   };
 
@@ -146,7 +154,6 @@ const Login = ({navigation}) => {
           <ActivityIndicator size="large" color={colors.loginBackgroung} />
         </View>
       )}
-      
     </View>
   );
 };
