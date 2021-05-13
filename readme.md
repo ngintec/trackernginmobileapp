@@ -18,18 +18,17 @@
 	
 		![screen](https://locatorservices.ngintec.com/ss/login_m.jpeg)
 
-		- Tracking on : Gather and Send Coordinates (at Update frequency)
-			
-			
+	3. Tracking on : Gather and Send Coordinates (at Update frequency)
+
 		![screen](https://locatorservices.ngintec.com/ss/UI.jpeg)
-	3. Settings
-	
-		![screen](https://locatorservices.ngintec.com/ss/settings.jpeg)
 		
+	4. Settings
 		a. Change alias
 		b. Change password
 		c. Change Update frequency
 		
-	4. Forgot password
+		![screen](https://locatorservices.ngintec.com/ss/settings.jpeg)
+		
+	5. Forgot password
 
 [Goto TrackerNgin repo](https://github.com/ngintec/trackerNgin.git) 
